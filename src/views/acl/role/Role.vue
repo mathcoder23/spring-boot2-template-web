@@ -63,7 +63,7 @@
         },
         methods: {
             async updateList() {
-                const rep = await this.$api.genApi.RoleApi.list()
+                const rep = await this.$api.genApi.RoleApi.list({pageNo: 1, pageSize: 20})
                 console.log('a', rep)
                 this.list = rep.data.list
                 this.page.total = rep.data.total

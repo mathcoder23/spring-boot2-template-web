@@ -57,13 +57,13 @@
                             label: '是否启用',
                             prop: 'enable',
                             type: 'select',
-                            dicData: this.$store.state.constants.dictList['local_Enable']
+                            // dicData: this.$store.state.constants.dictList['local_Enable']
                         },
                         {
                             label: '用户类型',
                             prop: 'type',
                             type: 'select',
-                            dicData: this.$store.state.constants.dictList['UserAccount_Type']
+                            // dicData: this.$store.state.constants.dictList['UserAccount_Type']
                         },
                         {
                             label: '角色',
