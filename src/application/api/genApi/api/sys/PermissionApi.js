@@ -1,7 +1,7 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-15 17:10:15
+*  date:  2021-08-16 10:15:56
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
@@ -255,21 +255,21 @@ const save = (body, params) => {
 * function:
 *  remove
 * params:
-	*[
-	*	{
-	*		"in":"query",
-	*		"name":"ids",
-	*		"description":"ids",
-	*		"type":"array",
-	*		"items":{
-	*			"type":"string"
-	*		},
-	*		"collectionFormat":"multi",
-	*		"required":true
-	*	}
-	*]
+	*[]
 
 * body:
+	*{
+	*	"type":"object",
+	*	"title":"BaseIdsParams",
+	*	"properties":{
+	*		"ids":{
+	*			"type":"array",
+	*			"items":{
+	*				"type":"string"
+	*			}
+	*		}
+	*	}
+	*}
 
 * response:
 	*{

@@ -29,7 +29,8 @@ PFApiConfig.init()
 Vue.use(router)
 Vue.use(VueAxios, axios)
 Vue.use(Element, {
-    i18n: (key, value) => i18n.t(key, value)
+    i18n: (key, value) => i18n.t(key, value),
+    size: 'small', zIndex: 19950
 })
 Vue.use(window.AVUE, {
     i18n: (key, value) => i18n.t(key, value)

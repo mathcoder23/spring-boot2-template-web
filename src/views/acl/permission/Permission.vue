@@ -19,6 +19,7 @@
                         :data="data"
                         :props="defaultProps"
                         default-expand-all
+                        :check-strictly="true"
                         node-key="id"
                         @check="changeCheckTree"
                         @node-click="handleNodeClick">

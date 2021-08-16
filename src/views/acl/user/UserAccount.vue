@@ -1,6 +1,5 @@
 <template>
     <el-card>
-        <assign-role-permission-dialog ref="assignDialog"/>
         <avue-crud :data="list" :option="option"
                    ref="form"
                    :page.sync="page"
@@ -10,9 +9,7 @@
                    @row-update="clickEdit"
                    @row-save="clickSave">
             <template slot-scope="scope" slot="menu">
-                <el-button style="margin-left:10px;" size="small" type="text" icon="el-icon-user"
-                           @click="clickAssignPermission(scope)">分配权限
-                </el-button>
+
             </template>
         </avue-crud>
     </el-card>
@@ -43,27 +40,23 @@
                         },
                         {
                             label: '用户昵称',
-                            prop: 'nickName'
+                            prop: 'nick'
                         },
                         {
                             label: '登录名',
                             prop: 'username'
                         },
                         {
-                            label: '手机号',
-                            prop: 'phone'
-                        },
-                        {
                             label: '是否启用',
                             prop: 'enable',
                             type: 'select',
-                            // dicData: this.$store.state.constants.dictList['local_Enable']
+                            dicData: this.$store.state.constants.dictList['local_Enable']
                         },
                         {
                             label: '用户类型',
                             prop: 'type',
                             type: 'select',
-                            // dicData: this.$store.state.constants.dictList['UserAccount_Type']
+                            dicData: this.$store.state.constants.dictList['Account_Type']
                         },
                         {
                             label: '角色',
@@ -75,7 +68,7 @@
                             label: "最近活跃时间",
                             prop: "lastActiveTime",
                             type: "date",
-                            editDisabled: true,
+                            editDisabled: false,
                             addDisplay: false,
                             format: "yyyy-MM-dd HH:mm:ss",
                             valueFormat: "yyyy-MM-dd HH:mm:ss",
@@ -101,7 +94,7 @@
                         value: item.id
                     })
                 }
-                this.option.column[6].dicData = this.roleList
+                this.option.column[5].dicData = this.roleList
                 this.$refs.form.init()
             },
             async updateList() {
