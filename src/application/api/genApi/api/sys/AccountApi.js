@@ -1,7 +1,7 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-16 10:15:56
+*  date:  2021-08-16 16:55:20
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
@@ -48,6 +48,76 @@ const getPermissionTree = (body, params) => {
     return PFApi.apiRequest(
     {
         url: apiPrefix + '/getPermissionTree',
+        method: 'POST',
+        data: body,
+        params: params
+    })
+}
+/**
+* function:
+*  save
+* params:
+	*[]
+
+* body:
+	*{
+	*	"type":"object",
+	*	"title":"EditAccountDTO",
+	*	"properties":{
+	*		"nick":{
+	*			"type":"string"
+	*		},
+	*		"password":{
+	*			"type":"string"
+	*		},
+	*		"enable":{
+	*			"type":"boolean"
+	*		},
+	*		"roleId":{
+	*			"format":"int64",
+	*			"type":"integer"
+	*		},
+	*		"id":{
+	*			"format":"int64",
+	*			"type":"integer"
+	*		},
+	*		"username":{
+	*			"type":"string"
+	*		}
+	*	}
+	*}
+
+* response:
+	*{
+	*	"type":"object",
+	*	"title":"RestObjectResponse«string»",
+	*	"properties":{
+	*		"msg":{
+	*			"type":"string"
+	*		},
+	*		"code":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		},
+	*		"data":{
+	*			"type":"string"
+	*		},
+	*		"errmsg":{
+	*			"type":"string"
+	*		},
+	*		"bcode":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		}
+	*	}
+	*}
+
+*
+*/
+const save = (body, params) => {
+    return PFApi.apiRequest(
+    {
+        url: apiPrefix + '/save',
         method: 'POST',
         data: body,
         params: params
@@ -195,6 +265,10 @@ export const AccountApi = {
      *
      */
     getPermissionTree: getPermissionTree,
+    /**
+     *
+     */
+    save: save,
     /**
      *
      */

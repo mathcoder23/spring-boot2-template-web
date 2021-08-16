@@ -1,7 +1,7 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-16 10:15:56
+*  date:  2021-08-16 16:55:20
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'

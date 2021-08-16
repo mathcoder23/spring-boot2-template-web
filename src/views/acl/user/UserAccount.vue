@@ -44,7 +44,17 @@
                         },
                         {
                             label: '登录名',
-                            prop: 'username'
+                            prop: 'username',
+                            editDisabled: true
+                        },
+                        {
+                            label: '登录密码',
+                            prop: 'password',
+                            type: 'password',
+                            editDisplay: true,
+                            addDisplay: true,
+                            viewDisplay: true,
+                            hide: true
                         },
                         {
                             label: '是否启用',
@@ -62,13 +72,12 @@
                             label: '角色',
                             prop: 'roleId',
                             type: 'select',
-                            remote: true,
                             dicData: this.roleList
                         }, {
                             label: "最近活跃时间",
                             prop: "lastActiveTime",
                             type: "date",
-                            editDisabled: false,
+                            editDisplay: false,
                             addDisplay: false,
                             format: "yyyy-MM-dd HH:mm:ss",
                             valueFormat: "yyyy-MM-dd HH:mm:ss",
@@ -79,7 +88,6 @@
         },
         mounted() {
             console.log('a', this.$api)
-            this.updateList()
             this.updateRoleList()
         },
         methods: {
@@ -94,8 +102,13 @@
                         value: item.id
                     })
                 }
-                this.option.column[5].dicData = this.roleList
+                for (let col of this.option.column) {
+                    if (col.prop === "roleId") {
+                        col.dicData = this.roleList
+                    }
+                }
                 this.$refs.form.init()
+                this.updateList()
             },
             async updateList() {
                 const rep = await this.$api.genApi.AccountApi.list({pageNo: 1, pageSize: 20})
@@ -117,8 +130,8 @@
             },
             clickSave(form, done, loading) {
                 const temp = JSON.parse(JSON.stringify(form))
-                delete temp.createTime
-                this.$api.genApi.UserAccountApi.save(temp).then(rep => {
+                console.log('save', temp)
+                this.$api.genApi.AccountApi.save(temp).then(rep => {
                     console.log('r', rep)
                     done()
                     this.updateList()

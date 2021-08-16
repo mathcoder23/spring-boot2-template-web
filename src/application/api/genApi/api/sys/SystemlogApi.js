@@ -1,7 +1,7 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-16 10:15:56
+*  date:  2021-08-16 16:55:20
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
@@ -10,71 +10,45 @@ const apiPrefix = '/api/sys/systemLog'
 * function:
 *  list
 * params:
-	*[
-	*	{
-	*		"in":"query",
-	*		"name":"api",
-	*		"description":"api",
-	*		"type":"string",
-	*		"required":false
-	*	},
-	*	{
-	*		"in":"query",
-	*		"name":"endDate",
-	*		"description":"endDate",
-	*		"type":"string",
-	*		"required":false
-	*	},
-	*	{
-	*		"in":"query",
-	*		"name":"ip",
-	*		"description":"ip",
-	*		"type":"string",
-	*		"required":false
-	*	},
-	*	{
-	*		"in":"query",
-	*		"name":"log",
-	*		"description":"log",
-	*		"type":"string",
-	*		"required":false
-	*	},
-	*	{
-	*		"default":1,
-	*		"in":"query",
-	*		"name":"pageNum",
-	*		"format":"int32",
-	*		"description":"pageNum",
-	*		"type":"integer",
-	*		"required":false
-	*	},
-	*	{
-	*		"default":20,
-	*		"in":"query",
-	*		"name":"pageSize",
-	*		"format":"int32",
-	*		"description":"pageSize",
-	*		"type":"integer",
-	*		"required":false
-	*	},
-	*	{
-	*		"in":"query",
-	*		"name":"startDate",
-	*		"description":"startDate",
-	*		"type":"string",
-	*		"required":false
-	*	},
-	*	{
-	*		"in":"query",
-	*		"name":"type",
-	*		"format":"int32",
-	*		"description":"type",
-	*		"type":"integer",
-	*		"required":false
-	*	}
-	*]
+	*[]
 
 * body:
+	*{
+	*	"type":"object",
+	*	"title":"SystemLogParams",
+	*	"properties":{
+	*		"accountName":{
+	*			"type":"string"
+	*		},
+	*		"endDate":{
+	*			"type":"string"
+	*		},
+	*		"log":{
+	*			"type":"string"
+	*		},
+	*		"pageNo":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		},
+	*		"ip":{
+	*			"type":"string"
+	*		},
+	*		"pageSize":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		},
+	*		"api":{
+	*			"type":"string"
+	*		},
+	*		"type":{
+	*			"format":"int32",
+	*			"type":"integer"
+	*		},
+	*		"startDate":{
+	*			"type":"string"
+	*		}
+	*	}
+	*}
 
 * response:
 	*{

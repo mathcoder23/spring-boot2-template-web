@@ -32,7 +32,9 @@ Vue.use(Element, {
     i18n: (key, value) => i18n.t(key, value),
     size: 'small', zIndex: 19950
 })
-Vue.use(window.AVUE, {
+import Avue from '@smallwei/avue';
+import '@smallwei/avue/lib/index.css';
+Vue.use(Avue, {
     i18n: (key, value) => i18n.t(key, value)
 })
 //注册全局容器

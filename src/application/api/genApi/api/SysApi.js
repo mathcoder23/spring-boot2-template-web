@@ -1,23 +1,35 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-15 16:43:18
+*  date:  2021-08-16 11:22:11
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
 const apiPrefix = '/api/sys'
 /**
 * function:
-*  getPermissionTree
+*  remove
 * params:
 	*[]
 
 * body:
+	*{
+	*	"type":"object",
+	*	"title":"BaseIdsParams",
+	*	"properties":{
+	*		"ids":{
+	*			"type":"array",
+	*			"items":{
+	*				"type":"string"
+	*			}
+	*		}
+	*	}
+	*}
 
 * response:
 	*{
 	*	"type":"object",
-	*	"title":"RestObjectResponse«List«PermissionTreeData»»",
+	*	"title":"RestObjectResponse«string»",
 	*	"properties":{
 	*		"msg":{
 	*			"type":"string"
@@ -27,10 +39,7 @@ const apiPrefix = '/api/sys'
 	*			"type":"integer"
 	*		},
 	*		"data":{
-	*			"type":"array",
-	*			"items":{
-	*				"ref":"#/definitions/PermissionTreeData"
-	*			}
+	*			"type":"string"
 	*		},
 	*		"errmsg":{
 	*			"type":"string"
@@ -44,10 +53,10 @@ const apiPrefix = '/api/sys'
 
 *
 */
-const getPermissionTree = (body, params) => {
+const remove = (body, params) => {
     return PFApi.apiRequest(
     {
-        url: apiPrefix + '/getPermissionTree',
+        url: apiPrefix + '/delete',
         method: 'POST',
         data: body,
         params: params
@@ -57,5 +66,5 @@ export const SysApi = {
     /**
      *
      */
-    getPermissionTree: getPermissionTree
+    remove: remove
 }

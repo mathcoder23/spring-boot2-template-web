@@ -12,7 +12,7 @@
         <el-form size="small" ref="dialog_form" :model="formData" :rules="formRules" label-position="left"
                  label-width="120px">
             <el-form-item label="分配权限" prop="name">
-                <permission-select v-model="formData.permissionIds"/>
+                <permission-select v-if="isShow" v-model="formData.permissionIds"/>
             </el-form-item>
         </el-form>
         <span class="dialog-footer" slot="footer">

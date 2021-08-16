@@ -56,7 +56,9 @@
                 console.log('a', rep)
                 this.data = rep.data
                 console.log('bb', this.value)
-                this.$refs.tree.setCheckedKeys(this.value)
+                this.$nextTick(() => {
+                    this.$refs.tree.setCheckedKeys(this.value)
+                })
 
             },
             changeCheckTree(cur, list) {
