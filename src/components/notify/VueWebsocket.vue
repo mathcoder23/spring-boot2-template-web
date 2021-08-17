@@ -1,13 +1,11 @@
+import Push from "push.js";
 <template>
-    <div id="main" class="app-main">
-    </div>
+
 </template>
 
 <script>
-    import Push from 'push.js'
-
     export default {
-        name: 'netty-notify',
+        name: "VueWebsocket",
         data() {
             return {
                 wsUri: ''
@@ -20,6 +18,9 @@
 
         },
         methods: {
+            async getWebsocketConfig(){
+
+            },
             initWebSocket() {
                 this.websock = new WebSocket(this.wsUri);
                 this.websock.onmessage = this.websocketOnMessage;
@@ -77,20 +78,9 @@
             }
 
         }
-    };
+    }
 </script>
 
-<style lang="less">
-    html, body {
-        width: 100%;
-        height: 100%;
-        background: #f0f0f0;
-        overflow: auto;
-        font-size: 16px;
-    }
+<style scoped>
 
-    .app-main {
-        width: 100%;
-        height: 100%;
-    }
 </style>

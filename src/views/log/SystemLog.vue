@@ -74,12 +74,14 @@
                 },
                 roleList: [],
                 search: {
-                    date: [DateUtils.getDayStartByDate(new Date()), DateUtils.getDayEndByDate(new Date())]
+                    date: [DateUtils.getMonthFirstByDate(new Date()), DateUtils.getDayEndByDate(new Date())]
                 },
                 option: {
                     align: 'center',
                     menuAlign: 'center',
                     addBtn: false,
+                    editBtn: false,
+                    delBtn: false,
                     column: [
                         {
                             label: 'id',
@@ -127,7 +129,7 @@
         methods: {
             searchReset() {
                 this.search = {
-                    date: [DateUtils.getDayStartByDate(new Date()), DateUtils.getDayEndByDate(new Date())]
+                    date: [DateUtils.getMonthFirstByDate(new Date()), DateUtils.getDayEndByDate(new Date())]
                 }
             },
             dateChange(date) {
@@ -152,33 +154,10 @@
                 }
                 delete search.date
 
-                const rep = await this.$api.genApi.SystemlogApi.list(search)
+                const rep = await this.$api.genApi.SystemLogApi.list(search)
                 console.log('a', rep)
                 this.list = rep.data.list
                 this.page.total = rep.data.total
-            },
-            clickAssignPermission(a) {
-                console.log('a', a)
-                this.$refs.assignDialog.open(a.row)
-            },
-            clickDel(row, index) {
-                this.$api.genApi.RoleApi.remove({ids: [row.id]}).then(rep => {
-                    this.updateList()
-                })
-            },
-            clickEdit(row, index, done, loading) {
-                this.clickSave(row, done, loading)
-            },
-            clickSave(form, done, loading) {
-                const temp = JSON.parse(JSON.stringify(form))
-                delete temp.createTime
-                this.$api.genApi.UserAccountApi.save(temp).then(rep => {
-                    console.log('r', rep)
-                    done()
-                    this.updateList()
-                }).catch(e => {
-                    loading()
-                })
             }
         }
     }

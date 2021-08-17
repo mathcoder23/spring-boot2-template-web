@@ -1,7 +1,7 @@
 /**
 *  该代码全为自动生成，为了不影响代码的持续生成，请不要修改此处代码
 *  version:
-*  date:  2021-08-16 16:55:20
+*  date:  2021-08-17 15:11:10
 *  mbg-author: Petty Fox
 */
 import {PFApi} from '@/api/core/core'
@@ -165,7 +165,7 @@ const list = (body, params) => {
         params: params
     })
 }
-export const SystemlogApi = {
+export const SystemLogApi = {
     /**
      *
      */
