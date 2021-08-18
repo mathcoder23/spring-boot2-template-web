@@ -64,7 +64,8 @@
                         group.column.push({
                             label: config.label,
                             prop: config.configKey,
-                            labelTip: config.remark
+                            labelTip: config.remark,
+                            labelWidth: 150
                         })
                         this.form[config.configKey] = config.value
                         this.cache[config.configKey] = config
