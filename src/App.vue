@@ -1,18 +1,16 @@
 <template>
     <div id="app">
         <router-view/>
-        <netty-notify/>
         <vue-websocket/>
     </div>
 </template>
 
 <script>
-    import NettyNotify from "./components/notify/NettyNotify";
     import VueWebsocket from "./components/notify/VueWebsocket";
 
     export default {
         name: "app",
-        components: {VueWebsocket, NettyNotify},
+        components: {VueWebsocket},
         data() {
             return {};
         },
