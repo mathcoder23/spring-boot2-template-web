@@ -1,4 +1,4 @@
-基于avue-cli后2台模板进行改进优化，便捷并能更快速使用
+基于avue-cli后台模板进行改进优化，便捷并能更快速使用
 # 项目初始化
 ```shell
 chmod +x script/init.sh
